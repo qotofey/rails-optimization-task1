@@ -1,0 +1,9 @@
+/.idea
+/.vscode
+
+.DS_Store
+
+.rbenv-gemsets
+.ruby-version
+
+data_large.txt
