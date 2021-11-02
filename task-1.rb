@@ -4,6 +4,7 @@ require 'json'
 require 'pry'
 require 'date'
 require 'minitest/autorun'
+require 'ruby-progressbar'
 
 class User
   attr_reader :attributes, :sessions
@@ -43,8 +44,22 @@ def collect_stats_from_users(report, users_objects, &block)
   end
 end
 
+# parts_of_work = 100
+# progressbar = ProgressBar.create(
+#   total: parts_of_work,
+#   format: '%a, %J, %E, %B'
+# )
+#
+# (1..parts_of_work).each do |i|
+#   sleep(0.01)
+#   progressbar.increment
+# end
+# line_count = `wc -l "#{filename}"`.strip.split(' ')[0].to_i
+
+
 def work
-  file_lines = File.read('data.txt').split("\n")
+  filename = 'data2000.txt'
+  file_lines = File.read(filename).split("\n")
 
   users = []
   sessions = []
