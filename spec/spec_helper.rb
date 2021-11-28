@@ -15,6 +15,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 # Dir.glob(File.join("*.rb")).each { |f| require File.join(Dir.pwd, f) }
 # Dir.glob(File.join("**", "lib", "**", "*.rb")).each { |f| require File.join(Dir.pwd, f) }
+require 'rspec-benchmark'
 require 'handling'
 # require 'pry'
 
@@ -23,6 +24,7 @@ require 'handling'
 # Dir["#{File.dirname(__FILE__)}/lib/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
+  config.include RSpec::Benchmark::Matchers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
